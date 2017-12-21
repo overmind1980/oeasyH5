@@ -37,21 +37,41 @@
             animation: mysecond 7.47s infinite;
         }
     </style>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script>
-        wx.config({
-            // 配置信息
-        });
-        wx.ready(function () {
-            media.src = "https://overmind1980.github.io/oeasyH5/001Basics/wav/bgm.wav"
-            media.play();
-        });
-    </script>
+
+    <script src="jquery-1.10.2.min.js"></script>
 </head>
 <body>
-<audio style="display:none" id="musicBox" preload="metadata" controls autoplay="false"></audio>
-</audio>
+
 <p id="canghai">沧海笑</p>
 <p id="taotao">滔滔两岸潮</p>
+
+
+<audio preload="preload" id="car_audio" src="https://overmind1980.github.io/oeasyH5/001Basics/wav/bgm.wav" loop=""></audio>
+<script>
+    setTimeout(function(){
+        $(window).scrollTop(1);
+    },0);
+
+    /*音乐*/
+    var audio = $('#car_audio');
+    var isPlaying = false;
+    function playAudio() {
+        var audio = $('#car_audio');
+        if (audio.attr('src') == undefined) {
+            audio.attr('src', audio.data('src'));
+        }
+        audio[0].play();
+        isPlaying = true;
+    }
+    $(function(){
+        playAudio();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                network = e.err_msg.split(":")[1];  //结果在这里
+                playAudio();
+            });
+        }, false);
+    })
+</script>
 </body>
 </html>

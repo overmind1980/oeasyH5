@@ -37,10 +37,21 @@
             animation: mysecond 7.47s infinite;
         }
     </style>
-
+    <script>
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audio.play();
+            }, false);
+        }
+    </script>
 </head>
-<body>
-<audio src="wav/bgm.wav" controls="controls" preload="auto" autoplay="autoplay"></audio>
+<body onload=" audioAutoPlay('bgm');">
+<audio id="bgm" src="wav/bgm.wav" controls="controls" preload="auto" autoplay="autoplay"></audio>
 <p id="canghai">沧海笑</p>
 <p id="taotao">滔滔两岸潮</p>
 

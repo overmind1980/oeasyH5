@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="Stylesheet" type="text/css" href="css/page.css" />
+    <script>
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audio.play();
+            }, false);
+        }
+    </script>
 </head>
 <body>
 <audio id="bgm" src="wav/music.mp3" preload="auto" autoplay="autoplay" loop="loop"></audio>

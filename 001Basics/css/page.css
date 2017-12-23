@@ -1,0 +1,55 @@
+html,body,page{
+    height:100%;
+    width:100%;
+    margin: 0;
+}
+page{
+    height: 100%;
+    font-size:180px;
+    position: absolute;
+    text-align: center;
+    padding-top:30%;
+}
+#c{
+    background-color: lightgreen;
+    animation: c 10s infinite;;
+}
+#x{
+    background-color: red;
+    animation: x 10s infinite;;
+}
+#q{
+    animation: q 10s infinite;;
+}
+#d{
+    background-color: black;
+    color:white;
+    animation: d 10s infinite;;
+}
+@keyframes c {
+    0%{opacity: 0}
+    20%{opacity: 100}
+    40%{opacity: 0}
+    100%{opacity: 0}
+}
+@keyframes x {
+    0%{opacity: 0}
+    20%{opacity: 0}
+    40%{opacity: 100}
+    60%{opacity: 0}
+    100%{opacity: 0}
+}
+@keyframes q {
+    0%{opacity: 0}
+    40%{opacity: 0}
+    60%{opacity: 100}
+    80%{opacity: 0}
+    100%{opacity: 0}
+}
+@keyframes d {
+    0%{opacity: 0}
+    60%{opacity: 0}
+    80%{opacity: 100}
+    100%{opacity: 0}
+}
+

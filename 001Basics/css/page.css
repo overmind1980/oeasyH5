@@ -12,19 +12,34 @@ page{
 }
 #c{
     background-color: lightgreen;
-    animation: c 10s infinite;;
+    animation: c 9.4s infinite;;
 }
 #x{
     background-color: red;
-    animation: x 10s infinite;;
+    animation: x 9.4s infinite;;
 }
 #q{
-    animation: q 10s infinite;;
+    background-image: url('../images/0.jpg');
+    background-size: 100% 100%;
+    animation: q 9.4s infinite;
 }
 #d{
     background-color: black;
     color:white;
-    animation: d 10s infinite;;
+    animation: d 9.4s infinite;;
+}
+#z{
+    font-size: 36px;
+    display: block;
+    animation: z 9.4s infinite;
+}
+
+@keyframes z {
+    0%{opacity: 0}
+    70%{opacity: 0}
+    80%{opacity: 100}
+    90%{opacity: 0}
+    100%{opacity: 0}
 }
 @keyframes c {
     0%{opacity: 0}

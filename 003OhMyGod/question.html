@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-size: 80px;
+        }
+    </style>
+    <script>
+        function getAnswer(){
+            var random = Math.floor(Math.random()*4)+1;
+            var str = String.fromCharCode(random+64);
+            document.write(str);
+        }
+        function get5Answers(){
+            getAnswer();
+            getAnswer();
+            getAnswer();
+            getAnswer();
+            getAnswer();
+            document.write("<br/>");
+        }
+        get5Answers();
+        get5Answers();
+        get5Answers();
+        get5Answers();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height:100%;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+
+    <script>
+        var num = 1;
+        function gogogo(){
+            if(num%7==0){
+                document.body.innerHTML = num + "过";
+            }
+            else if(num%10==7){
+                document.body.innerHTML = num + "过";
+            }
+            else if((Math.floor(num/10))%10==7){
+                document.body.innerHTML = num + "过";
+            }
+            else{
+                document.body.innerHTML = num;
+            }
+            num++;
+        }
+    </script>
+</head>
+<body onclick="gogogo()">
+
+</body>
+</html>

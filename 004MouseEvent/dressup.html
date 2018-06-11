@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container div{
+            width:350px;
+            height:350px;
+            position: absolute;
+        }
+        #container{
+            background-image:url('images/dressup/body.png');
+            width:350px;
+            height:350px;
+            position: absolute;
+            top:60px;
+        }
+        #menu div{
+            float: left;
+            border: 1px solid black;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <div id="suit" onclick="suit()">西装</div>
+    <div id="haihun" onclick="haihun()">海魂衫</div>
+    <div id="diaodai" onclick="diaodai()">吊带</div>
+    <div id="xiku" onclick="xiku()">西裤子</div>
+    <div id="duanku" onclick="duanku()">短裤</div>
+</div>
+<div id="container">
+    <div id="upper"></div>
+    <div id="lower"></div>
+</div>
+</body>
+<script>
+    function suit(){
+        document.getElementById("upper").style.backgroundImage= "url('images/dressup/upper1.png')";
+    }
+    function haihun(){
+        document.getElementById("upper").style.backgroundImage= "url('images/dressup/upper2.png')";
+    }
+    function diaodai(){
+        document.getElementById("upper").style.backgroundImage= "url('images/dressup/upper3.png')";
+    }
+    function xiku(){
+        document.getElementById("lower").style.backgroundImage= "url('images/dressup/lower1.png')";
+    }
+    function duanku(){
+        document.getElementById("lower").style.backgroundImage= "url('images/dressup/lower2.png')";
+    }
+</script>
+</html>

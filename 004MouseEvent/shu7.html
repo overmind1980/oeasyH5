@@ -10,8 +10,11 @@
             font-size: 100px;
         }
     </style>
-
-    <script>
+</head>
+<body onclick="gogogo()">
+    <div id="container"></div>
+</body>
+<script>
         var num = 1;
         function gogogo(){
             if(num%7==0){
@@ -24,13 +27,9 @@
                 document.getElementById("container").innerHTML = num + "过";
             }
             else{
-                ocument.getElementById("container").innerHTML = num;
+                document.getElementById("container").innerHTML = num;
             }
             num++;
         }
     </script>
-</head>
-<body onclick="gogogo()">
-    <div id="container"></div>
-</body>
 </html>

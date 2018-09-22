@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            width:600px;
+            height:300px;
+            border:black solid 10px;
+            margin:0 auto;
+        }
+        #container>div{
+            width:300px;
+            height:300px;
+            float:left;
+        }
+        #mine{
+            background-color: lightgreen;
+        }
+        #computer{
+            background-color: lightblue;
+        }
+        #computerChoice>IMG{
+            transform: scaleX(-1);
+        }
+        h1{
+            margin-top:0;
+            text-align: center;
+        }
+        #container>#result{
+            font-size: 70px;
+            width:600px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="go()">
+<div id="container">
+    <div id="mine">
+        <h1>我的出招</h1>
+        <div id="myChoice">
+            <img src="images/animation.gif"/>
+        </div>
+        <input type="button" value="石头" onclick="rock()"/>
+        <input type="button" value="剪刀" onclick="scissors()"/>
+        <input type="button" value="布" onclick="paper();"/>
+    </div>
+    <div id="computer">
+        <h1>电脑出招</h1>
+        <div id="computerChoice">
+            <img src="images/animation.gif"/>
+        </div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</body>
+<script>
+    var r,score=0,grade=1,lastHumanChoice,isComputerWin=false,lastComputerChoice;
+    function rock(){
+        r = 3*Math.random();
+        document.getElementById("myChoice").innerHTML="<img src=\"images/rock.png\"/>";
+        judge("rock");
+        lastHumanChoice = "rock";
+    }
+
+    function scissors(){
+        r = 3*Math.random();
+        document.getElementById("myChoice").innerHTML="<img src=\"images/scissors.png\"/>";
+        judge("scissors");
+        lastHumanChoice = "scissors";
+    }
+    function paper(){
+        r = 3*Math.random();
+        document.getElementById("myChoice").innerHTML="<img src=\"images/paper.png\"/>";
+        judge("paper");
+        lastHumanChoice = "paper";
+     }
+    function judge(myChoice){
+        if(grade==1){
+            var computerResult = "rock";
+            document.getElementById("computerChoice").innerHTML="<img src='images/rock.png'>";
+        }
+        else if(grade==2){
+            var computerResult = learner();
+        }
+        else if(grade==3){
+            var computerResult = winAgain();
+            lastComputerChoice = computerResult;
+        }
+        else{
+            var computerResult = computerChoice();
+        }
+        if(myChoice=="rock"){
+            if(computerResult=="scissors"){
+                score += 1;
+            }
+            else if(computerResult=="paper"){
+                score += -1;
+            }
+            else{
+
+            }
+        }
+        else if(myChoice=="scissors"){
+            if(computerResult=="rock"){
+                score += -1;
+            }
+            else if(computerResult=="paper"){
+                score += 1;
+            }
+            else{
+
+            }
+        }
+        else{
+            if(computerResult=="rock"){
+                score += 1;
+            }
+            else if(computerResult=="scissors"){
+                score += -1;
+            }
+        }
+        document.getElementById("result").innerHTML = "第"+grade+"关，积分:"+score;
+        if(score>=5){
+            score = 0;
+            grade +=1;
+            document.getElementById("result").innerHTML = "恭喜您到了第"+grade+"关";
+        }
+    }
+
+    function go(){
+        score = 3;
+    }
+
+    function computerChoice(){
+        if(r<1){
+            document.getElementById("computerChoice").innerHTML="<img src='images/rock.png'>";
+            return "rock";
+        }
+        else if(r<2){
+            document.getElementById("computerChoice").innerHTML="<img src='images/scissors.png'>";
+            return "scissors";
+        }
+        else{
+            document.getElementById("computerChoice").innerHTML="<img src='images/paper.png'>";
+            return "paper";
+        }
+    }
+    function learner(){
+        document.getElementById("computerChoice").innerHTML="<img src='images/"+lastHumanChoice+".png'>";
+        return lastHumanChoice;
+    }
+
+    function winAgain(){
+        if(isComputerWin){
+            document.getElementById("computerChoice").innerHTML="<img src='images/"+lastComputerChoice+".png'>";
+            return lastComputerChoice;
+        }
+        else{
+            return computerChoice();
+        }
+    }
+</script>
+</html>

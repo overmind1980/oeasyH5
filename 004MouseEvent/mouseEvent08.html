@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <style type="text/css">
+        html,body{
+            width:100%;
+            height:100%;
+            margin:0 auto;
+        }
+        #pushButton{
+            text-align: center;
+            margin-top: 50px;
+            width:200px;
+            height:50px;
+            font-size:20px;
+            background-color: black;
+            margin:0 auto;
+        }
+        #num{
+            width:120px;
+            margin:0 auto;
+            font-size:30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="pushButton"></div>
+    <div id="num"></div>
+</body>
+<script>
+    var count = 0;
+    function myfunction(e){
+        document.getElementById("num").innerHTML="mouse at  ("+e.clientX+","+e.clientY+")";
+    }
+    document.getElementById("pushButton").addEventListener("mouseover",myfunction);
+</script>
+</html>

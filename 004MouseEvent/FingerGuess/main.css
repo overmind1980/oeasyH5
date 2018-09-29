@@ -1,7 +1,7 @@
 #container{
     width:600px;
     height:300px;
-    border:black solid 5px;
+    border:black solid 15px;
     margin:0 auto;
 }
 #container>div{
@@ -23,7 +23,7 @@ h1{
     text-align: center;
 }
 #container>#result{
-    font-size: 100px;
+    font-size: 60px;
     width:600px;
     text-align: center;
 }

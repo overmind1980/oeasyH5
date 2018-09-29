@@ -3,37 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style >
-        #container{
-            width:600px;
-            height:300px;
-            border:black solid 10px;
-            margin:0 auto;
-        }
-        #container>div{
-            width:300px;
-            height:300px;
-            float:left;
-        }
-        #mine{
-            background-color: lightgreen;
-        }
-        #computer{
-            background-color: lightblue
-        }
-        #computerChoice>IMG{
-            transform: scaleX(-1);
-        }
-        h1{
-            margin-top:0;
-            text-align: center;
-        }
-        #container>#result{
-            font-size: 100px;
-            width:600px;
-            text-align: center;
-        }
-    </style>
+    <link href="main.css" rel="stylesheet"/>
 </head>
 <body onload="go()">
 <div id="container">
@@ -56,79 +26,5 @@
 </div>
 
 </body>
-<script>
-    var r;
-    function rock(){
-        r = 3*Math.random();
-        document.getElementById("myChoice").innerHTML="<img src=\"images/rock.png\"/>";
-        var computerResult = computerChoice();
-        judge("rock",computerResult);
-    }
-
-    function scissors(){
-        r = 3*Math.random();
-        document.getElementById("myChoice").innerHTML="<img src=\"images/scissors.png\"/>";
-        var computerResult = computerChoice();
-        judge("scissors",computerResult);
-    }
-    function paper(){
-        r = 3*Math.random();
-        document.getElementById("myChoice").innerHTML="<img src=\"images/paper.png\"/>";
-        var computerResult = computerChoice();
-        judge("paper",computerResult);
-    }
-    function judge(myChoice,computerResult){
-        if(myChoice=="rock"){
-            if(computerResult=="rock"){
-                document.getElementById("result").innerHTML = "draw";
-            }
-            else if(computerResult=="scissors"){
-                document.getElementById("result").innerHTML = "win";
-            }
-            else if(computerResult=="paper"){
-                document.getElementById("result").innerHTML = "lose";
-            }
-        }
-        else if(myChoice=="scissors"){
-            if(computerResult=="rock"){
-                document.getElementById("result").innerHTML = "lose";
-            }
-            else if(computerResult=="scissors"){
-                document.getElementById("result").innerHTML = "draw";
-            }
-            else if(computerResult=="paper"){
-                document.getElementById("result").innerHTML = "win";
-            }
-        }
-        else{
-            if(computerResult=="rock"){
-                document.getElementById("result").innerHTML = "win";
-            }
-            else if(computerResult=="scissors"){
-                document.getElementById("result").innerHTML = "lose";
-            }
-            else if(computerResult=="paper"){
-                document.getElementById("result").innerHTML = "draw";
-            }
-        }
-    }
-
-    function go(){
-    }
-
-    function computerChoice(){
-        if(r<1){
-            document.getElementById("computerChoice").innerHTML="<img src='images/rock.png'>";
-            return "rock";
-        }
-        else if(r<2){
-            document.getElementById("computerChoice").innerHTML="<img src='images/scissors.png'>";
-            return "scissors";
-        }
-        else{
-            document.getElementById("computerChoice").innerHTML="<img src='images/paper.png'>";
-            return "paper";
-        }
-    }
-</script>
+<script src="main.js"></script>
 </html>

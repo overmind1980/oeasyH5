@@ -1,0 +1,29 @@
+#container{
+    width:600px;
+    height:300px;
+    border:black solid 5px;
+    margin:0 auto;
+}
+#container>div{
+    width:300px;
+    height:300px;
+    float:left;
+}
+#mine{
+    background-color: lightgreen;
+}
+#computer{
+    background-color: lightblue
+}
+#computerChoice>IMG{
+    transform: scaleX(-1);
+}
+h1{
+    margin-top:0;
+    text-align: center;
+}
+#container>#result{
+    font-size: 100px;
+    width:600px;
+    text-align: center;
+}

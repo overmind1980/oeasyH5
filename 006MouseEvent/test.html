@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			html,body{
+				height:100%;
+				width:100%;
+				background-color: lightcoral;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">测试div</div>
+	</body>
+	<script>   
+		document.addEventListener("touchstart", handleStart, false);
+		function handleStart(event){
+			alert(123);
+		}
+	</script>
+</html>
